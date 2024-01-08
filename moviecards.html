@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Card</title>
+    <style>
+        .top{
+           
+            width: 80%;
+            height: 200px;
+            border: 1px solid cornsilk;
+        }
+        .row{
+            
+            overflow: visible;
+            
+            display: flex;
+            justify-content: space-between;
+        }
+        .card{
+
+            top:200px;
+            width:20%;
+            height:100px;
+            background-color: bisque;
+            border-radius: 5px;
+           
+            border: 2px solid burlywood;
+        }
+        #card1{
+            background: url(11.jpg) no-repeat;
+        }
+        #card2{
+            background: url(2.jpg) no-repeat;
+        }
+        #card3{
+            background: url(3.jpg) no-repeat;
+        }
+        #card4{
+            background: url(4.jpg) no-repeat;
+        }
+        #card5{
+            background: url(5.jpg) no-repeat;
+        }
+        .title{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            font-weight: 800;
+            position: absolute;
+            top:150px;
+        }
+        .card:hover{
+            transform:scale(1.43);
+            transition: .1s;
+            border: 2px solid rgb(255, 255, 255)
+
+        }
+    </style>
+</head>
+<body>
+    <div class="top"> </div>
+    <div class="row">
+
+        <div class="card" id="card1"> 
+            <div class="title">Movie Name</div>
+        </div>
+        <div class="card" id="card2"> <div class="title">Movie Name</div></div>
+        <div class="card" id="card3"> <div class="title">Movie Name</div></div>
+        <div class="card" id="card4"> <div class="title">Movie Name</div></div>
+        <div class="card" id="card5"> <div class="title">Movie Name</div></div>
+
+    </div>
+    
+</body>
+</html>
