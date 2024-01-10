@@ -3,72 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    .circle-container {
-      position: relative;
-      width: 200px;
-      height: 200px;
-    }
-
-    .circle {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      background-color: red; /* Change color as needed */
-      border-radius: 50%;
-    }
-
-    .circle::before,
-    .circle::after {
-      content: "";
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      background-color: blue; /* Change color as needed */
-      border-radius: 50%;
-    }
-
-    .circle::before {
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .circle::after {
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .circle1 {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      background-color: red; /* Change color as needed */
-      border-radius: 50%;
-    }
-
-    .circle1::before,
-    .circle1::after {
-      content: "";
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      background-color: forestgreen; /* Change color as needed */
-      border-radius: 50%;
-    }
-
-    .circle1::before {
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .circle1.circle {
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%)
-    }
-  </style>
+ 
 </head>
 <body>
   <div class="circle-container">
