@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <style>
+   *{
+    margin: 0;
+    padding: 0;
+   }
+   .circle1{
+   background-color: blue;
+height: 200px;
+width: 200px;
+border-radius: 50%;
+border: 5px;
+    top: 700px;
+    left: 300px;
+    position: relative;
+    transition: 3.3s;
+   }
+   .circle2{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border: 5px;
+    left: 700px;
+    top: 500px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 3.3s;
+}
+.circle3{
+
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    border: 5px;
+    right: 800px;
+    box-sizing: 200px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 3.3s;
+}
+.circle4{
+    
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    border: 5px;
+    box-sizing: 500px;
+    top: 500px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 3.3s;
+}
+.circle1:hover
+{
+    transition: 3.3s;
+    top: 0;
+    transform: scale(1);
+}
+.circle2:hover{
+    transition: 3.3s;
+    left: 0;
+    transform: scale(1);
+}
+.circle3:hover
+{
+    transition: 6.3s;
+    bottom: 0;
+    transform: scale(1);
+}
+
+.circle4:hover{
+    transition: 5.3s;
+    right: 0;
+    transform: scale(1);
+}
+
+   </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle1"></div>
+            <div class="circle2"></div>
+                <div class="circle3"></div>
+                    <div class="circle4"></div>
+    </div>
+</body>
+</html>

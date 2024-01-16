@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hide and show</title>
+  <style>
+    .box{
+color: blue;
+cursor: pointer;
+width: 140px;
+height: 50px;
+border: 1px solid blue;
+display: flex;
+place-content: center;
+}
+.main{
+  border-radius: 10px;
+  border-color: blue;
+  width: 10%;
+  height: 70%;
+  place-content: center;
+  text-align: center;
+  padding: 1px 1px 1px 1px;
+  visibility: hidden;
+}
+    .box:hover +.main{
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"><h1>HOME</h1></div>
+  <div class="main" ><p>class mainh gytygyreergvgfred</p>
+  <p>dtgguuhufgfretr</p>
+  </div>
+</body>
+</html>
