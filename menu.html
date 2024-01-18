@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+    <style>
+       
+        .home{
+            position: relative;
+            
+        }
+        .aboutus{
+            position: relative;
+        }
+        .services{
+            position: relative;
+        }
+        .contact{
+            position: relative;
+        }
+        #home{
+            visibility: hidden;
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            border-radius: 6px;
+            background-color: antiquewhite;
+            padding: 15px;
+            left: 5%;
+            top: 30px;
+        }
+        #aboutus{
+            visibility: hidden;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border-radius: 6px;
+            background-color: antiquewhite;
+            padding: 15px;
+            left: 5%;
+            top: 30px;
+        }
+        #services{
+            visibility: hidden;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border-radius: 6px;
+            background-color: antiquewhite;
+            padding: 15px;
+            left: 5%;
+            top: 30px;
+        }
+        #contact{
+            visibility: hidden;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border-radius: 6px;
+            background-color: antiquewhite;
+            padding: 15px;
+            left: 5%;
+            top: 30px;
+        }
+       .home:hover  #home{
+            visibility: visible;
+        }
+        .aboutus:hover  #aboutus{
+            visibility: visible;
+        }
+        .services:hover  #services{
+            visibility: visible;
+        }
+        .contact:hover  #contact{
+            visibility: visible;
+        }
+        .nav{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="nav">
+         <span class="home">Home <span id="home">IT services industry</span></span>
+         <span class="aboutus">About Us <span id="aboutus">IT demands for clients</span></span>
+         <span class="services">Services <span id="services">team collaboration and efficiency</span></span>
+         <span class="contact">Contact <span id="contact">IT consulting services</span></span>
+    </div>
