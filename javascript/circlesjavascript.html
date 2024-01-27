@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>circles javascript</title>
+    <style>
+        .top{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: bisque;
+            border: 1px solid red;
+            position: absolute;
+            top:500px;
+            left:350px;
+        }
+        .bottom{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: bisque;
+            border: 1px solid green;
+            position: absolute;
+            bottom:500px;
+            left:350px;
+        }
+        .left{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: bisque;
+            border: 1px solid red;
+            position: absolute;
+            left:600px;
+            bottom:200px;
+        }
+        .right{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: bisque;
+            border: 1px solid maroon;
+            position: absolute;
+            right:900px;
+            bottom:200px;
+        }
+        function hoverout(){
+            alert("mouse out event")
+        }
+    </style>
+    <script>
+         function sendmetop(){
+            document.getElementById("top").style.top="0px";
+            document.getElementById("top").style.transition=".6s";
+            document.getElementById("top").style.transform="scale(.5)";
+            document.getElementById("top").style.backgroundColor="blue";
+        }
+        function sendmebottom(){
+            document.getElementById("bottom").style.bottom="0px";
+            document.getElementById("bottom").style.transition=".6s";
+            document.getElementById("bottom").style.transform="scale(.5)";
+            document.getElementById("bottom").style.backgroundColor="green";
+        }
+        function sendmeleft(){
+            document.getElementById("left").style.left="0px";
+            document.getElementById("left").style.transition=".6s";
+            document.getElementById("left").style.transform="scale(.5)";
+            document.getElementById("left").style.backgroundColor="red";
+        }
+        function sendmeright(){
+            document.getElementById("right").style.right="0px";
+            document.getElementById("right").style.transition=".6s";
+            document.getElementById("right").style.transform="scale(.5)";
+            document.getElementById("right").style.backgroundColor="maroon";
+        }
+    </script>
+</head>
+<body>
+    <div class="top" id="top"  onmouseover="sendmetop()" ></div>
+    <div class="bottom" id="bottom"  onmouseover="sendmebottom()"></div>
+    <div class="left" id="left"  onmouseover="sendmeleft()"></div>
+    <div class="right" id="right"  onmouseover="sendmeright()"></div>
+</body>
+</html>
