@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clculator javascript</title>
+  <style>
+    button{
+      font-size: 18px;
+      padding: 20px 10px;
+      margin:20px;
+      cursor: pointer;
+  }
+  #result{
+     font-size: 24px;
+     margin-top: 2px;
+  }
+</style>
+<script>
+let total=0;
+function addnum(number){
+total += number;
+updateresult();
+}
+function clearall(){
+total=0;
+updateresult();
+}
+function  updateresult(){
+ document.getElementById('result').textContent ='result:'+total;
+}
+</script>
+</head>
+<body>
+  <div id="result">result:0</div>
+<button onclick="addnum(1)">add1</button>
+<button onclick="addnum(2)">add2</button>
+<button onclick="addnum(3)">add3</button>
+<button onclick="clearall()">clear all</button>
+
+</body>
+</html>

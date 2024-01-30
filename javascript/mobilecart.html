@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Items to Cart</title>
+    <title>Document</title>
     <style>
         .parent{
             display: flex;
@@ -12,7 +11,7 @@
         }
         .item {
             width: 200px;
-            height: 400px;
+            height: 500px;
             border: 1px solid black;
             border-radius: 10px;
             background-color: bisque;
@@ -60,22 +59,39 @@
             text-align: center;
             font-size: 40px;
             font-weight: bold;
-
-
         }
-
-        .qty {
-            margin-top: 10px;
+        .totalprice{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: burlywood;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;  
+        }
+        .price{
+            text-align: center;
+            cursor: pointer;
+            color: black;
+            font-size: 25px;
             margin-left: 35px;
+            margin-top: 25px;
+            
+            display: flex;
+
         }
-    </style>
-    <script>
-        
-        function addtocart(a){
-            let qty
+            </style>
+            <script>
+                
+                function addtocart(a){
             if(a==1){
                  qty = document.getElementById('qty1').value;
                  document.getElementById('qty1').value = 1;
+                
             }
             if(a==2){
                  qty = document.getElementById('qty2').value;
@@ -86,22 +102,27 @@
                  document.getElementById('qty3').value = 1;
             }
             let cart = document.getElementById('cart').innerHTML;
-          
+            let oldprice=document.getElementById('price').innerHTML;
+            let qty = document.getElementById('qty').value;
             alert(qty)
             cart = Number(cart);
             qty=Number(qty)
             document.getElementById('cart').innerHTML= cart+qty ;
-            
-               }
-       
-    </script>
-</head>
+            document.getElementById('totalprice').innerHTML= price*qty ;
+               }  
+                
+                
+                
+  </script>
 
+</head>
 <body>
     <div class="parent">
     <div class="item">
-        <div class="image"></div>
-
+        <div class="image">
+            <img width="150" height="200" src="abc (1).png" alt="">
+        </div>
+            
         <div class="qty">
 
             <select name="qty" id="qty1">
@@ -112,11 +133,14 @@
                 <option value="5">5</option>
             </select>
         </div>
-
+         <span style price></span>
+         <div id="price1">price:6265</div>
         <div class="title" onclick="addtocart(1)">Add Item</div>
-    </div>
+           </div>
     <div class="item">
-        <div class="image"></div>
+        <div class="image">
+            <img width="150" height="200" src="abc1.png" alt="">
+        </div>
         <div class="qty">
 
             <select name="qty" id="qty2">
@@ -127,10 +151,13 @@
                 <option value="5">5</option>
             </select>
         </div>
+        <div class="price" onclick="price=225">price=225</div>
         <div class="title" onclick="addtocart(2)">Add Item</div>
     </div>
     <div class="item">
-        <div class="image"></div>
+        <div class="image">
+            <img width="150" height="200" src="abc2.png" alt="">
+        </div>
         <div class="qty">
 
             <select name="qty" id="qty3">
@@ -141,13 +168,14 @@
                 <option value="5">5</option>
             </select>
         </div>
+        <div class="price" onclick="price=4525">price=4525</div>
         <div class="title" onclick="addtocart(3)">Add Item</div>
+        </div>
         <div id="cart" class="cart">0</div>
-    </div>
+        <span style="float :left;">totalprice</span>
+        <div id="cart" class="totalprice">0</div>
     
 
 </div>
-
 </body>
-
 </html>
