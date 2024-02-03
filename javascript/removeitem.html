@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove items</title>
+    <style>
+        .container{
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .item {
+            width: 200px;
+            height: 450px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: beige;
+            margin-left: 25px;
+            margin-top: 50px;
+
+        }
+
+        .image1 {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border: 1px solid blue;
+            margin-left: 25px;
+            margin-top: 25px;
+            background: url("abc.jpg") no-repeat;
+
+        }
+        .image2 {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border: 1px solid blue;
+            margin-left: 25px;
+            margin-top: 25px;
+            background: url("abc1.jpg") no-repeat;
+
+        }
+        .image3 {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border: 1px solid blue;
+            margin-left: 25px;
+            margin-top: 25px;
+            background: url("abc2.jpg") no-repeat;
+
+        }
+
+        .title {
+            text-align: center;
+            cursor: pointer;
+            color: black;
+            background-color: azure;
+            border-radius: 6px;
+            font-size: 25px;
+            margin-left: 35px;
+            margin-top: 25px;
+            width: 120px;
+            height: 35px;
+            border: 1px solid black;
+
+        }
+        .remove{
+            text-align: center;
+            cursor: pointer;
+            color: black;
+            background-color: azure;
+            border-radius: 6px;
+            font-size: 25px;
+            margin-left: 35px;
+            margin-top: 25px;
+            width: 150px;
+            height: 35px;
+            border: 1px solid black;
+            visibility: hidden;
+            
+        }
+        .addeditems{
+            text-align: center;
+            color: black;
+            font-size: 25px;
+            visibility: hidden;
+           
+        }
+        .cart {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: beige;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .total {
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: beige;
+            border-radius:6px;
+            position: absolute;
+            top: 80px;
+            right: 30px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+             font-size: 22px;
+
+        }
+
+
+        .qty {
+            margin-top: 10px;
+            margin-left: 35px;
+        }
+        
+        .price{
+            color: black;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        let q1=0;
+        let q2=0;
+        let q3=0;
+     function addtocart(a) {
+            var qty;
+            var price;
+            if (a == 1) {
+      qty = Number(document.getElementById("qty1").value);
+        q1=q1+qty;
+       price = Number(document.getElementById("price1").innerHTML)
+       price = qty * price;
+       document.getElementById("qty1").value = 1;
+       document.getElementById("rb1").style.visibility = "visible";
+       document.getElementById("item1").style.visibility = "visible";
+       document.getElementById("item1").innerHTML = q1;
+    }
+     if(a==2){
+                qty = Number(document.getElementById("qty2").value);
+                q2=q2+qty;
+                price = Number(document.getElementById("price2").innerHTML)
+                price = qty*price;
+                document.getElementById("qty2").value = 1;
+               document.getElementById("rb2").style.visibility = "visible";
+               document.getElementById("item2").style.visibility = "visible";
+               document.getElementById("item2").innerHTML =q2;
+            }
+            if(a==3){
+                qty = Number(document.getElementById("qty3").value);
+                q3=q3+qty;
+                price = Number(document.getElementById("price3").innerHTML)
+                price = qty*price;
+                document.getElementById("qty3").value = 1;
+               document.getElementById("rb3").style.visibility = "visible";
+               document.getElementById("item3").style.visibility = "visible";
+               document.getElementById("item3").innerHTML = q3;
+            }
+            var oldprice = Number(document.getElementById("totalprice").innerHTML)
+            var pastvalue = document.getElementById("cart").innerHTML;
+            
+            
+            qty = Number(qty);
+            pastvalue = Number(pastvalue);
+
+             
+                document.getElementById("cart").innerHTML = pastvalue + qty;
+                document.getElementById("totalprice").innerHTML = price + oldprice;  
+         
+        }
+        
+ function removeitem(a) {
+            let qty;
+            let price;
+            if (a == 1) {
+                price = Number(document.getElementById("price1").innerHTML)
+                q1--;
+                document.getElementById("item1").innerHTML = q1;
+                if (q1< 1) {
+                    document.getElementById("rb1").style.visibility = "hidden";
+                    document.getElementById("item1").style.visibility = "hidden";
+                }
+            }  
+            if (a == 2) {
+                price = Number(document.getElementById("price2").innerHTML)
+                q2--;
+                document.getElementById("item2").innerHTML =q2;
+                if (q2 < 1) {
+                    document.getElementById("rb2").style.visibility = "hidden";
+                    document.getElementById("item2").style.visibility = "hidden";
+
+
+                }
+            }
+            if (a == 3) {
+                price = Number(document.getElementById("price3").innerHTML)
+                q3--;
+                document.getElementById("item3").innerHTML =q3;
+                if (q3 < 1) {
+                    document.getElementById("rb3").style.visibility = "hidden";
+                    document.getElementById("item3").style.visibility = "hidden";
+                }
+            }
+            
+            
+            var oldprice = Number(document.getElementById("totalprice").innerHTML)
+            var pastvalue = document.getElementById("cart").innerHTML;
+            
+            
+            pastvalue = Number(pastvalue);
+            document.getElementById("cart").innerHTML = pastvalue - 1;
+            document.getElementById("totalprice").innerHTML = oldprice - price;
+             
+        }
+        
+</script>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="item">
+        <div class="image1"></div>
+
+        <div class="qty">
+
+            <select name="qty" id="qty1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+<div class="price">Price: <span  id="price1">500</span></div>
+        <div class="title" onclick="addtocart(1)">Add Item</div>
+       <div class="remove" id="rb1" onclick="removeitem(1)">Remove item</div>
+      <div class="addeditems" id="item1">addeditems</div>
+        </div>
+    <div class="item">
+        <div class="image2"></div>
+
+        <div class="qty">
+
+            <select name="qty" id="qty2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="price"> Price: <span  id="price2">250</span></div>
+        <div class="title" onclick="addtocart(2)">Add Item</div>
+        <div class="remove" id="rb2" onclick="removeitem(2)">Remove item</div>
+        <div class="addeditems" id="item2">addeditems</div>
+    </div>
+    <div class="item">
+        <div class="image3"></div>
+
+        <div class="qty">
+
+            <select name="qty" id="qty3">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+          <div class="price" >Price: <span  id="price3">600</span></div>
+        <div class="title" onclick="addtocart(3)">Add Item</div>
+        <div class="remove"id="rb3" onclick="removeitem(3)">Remove item</div>
+        <div class="addeditems" id="item3">addeditems</div>
+    </div>
+</div>
+
+
+<div id="cart" class="cart">0</div>
+
+<div class="total">Total Price: <span id="totalprice">0</span> </div>
+
+</body>
+
+</html>
