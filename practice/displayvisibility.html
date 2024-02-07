@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display none visibility hidden</title>
+    <style>
+        .container1{
+            display: flex;
+        }
+       
+        .box{
+            height: 200px;
+            width: 200px;
+            color: white;
+            text-align: center;
+        }
+        .firstbox{
+            background-color: #8c52ff;
+        }
+        .secondbox{
+            background-color: #6e5999;
+        }
+        .thirdbox{
+            background-color: #786c8f;
+        }
+        .secondbox{
+            visibility: hidden;
+        }
+        .firstbox{
+            display: none;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container1">
+            <div class="box firstbox">first box</div>
+            <div class="box secondbox">second box</div>
+            <div class="box thirdbox">thirdbox</div>
+        </div>
+    </div>
+</body>
+</html>
