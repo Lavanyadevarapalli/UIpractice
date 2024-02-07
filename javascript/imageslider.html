@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Slider</title>
+<style>
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      overflow: hidden;
+    }
+  
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+  
+    .slide {
+      min-width: 100%;
+    }
+  
+    .slide img {
+      width: 100%;
+      display: block;
+    }
+  
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+  
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #bbb;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+  
+    .dot.active {
+      background-color: #333;
+    }
+  
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      outline: none;
+      z-index: 1;
+    }
+  
+    .prev {
+      left: 0;
+    }
+  
+    .next {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide"><img src="slide.jpg" alt="Slide 1"></div>
+    <div class="slide"><img src="slide1.jpg" alt="Slide 2"></div>
+    <div class="slide"><img src="slide2.jpg" alt="Slide 3"></div>
+    <div class="slide"><img src="slide3.jpg" alt="Slide 4"></div>
+    <div class="slide"><img src="slide4.jpg" alt="Slide 5"></div>
+    <div class="slide"><img src="slide5.jpg" alt="Slide 6"></div>
+    <div class="slide"><img src="slide6.jpg" alt="Slide 7"></div>
+    <div class="slide"><img src="slide7.jpg" alt="Slide 8"></div>
+    <div class="slide"><img src="slide8.jpg" alt="Slide 9"></div>
+    <!-- Add more slides as needed -->
+  </div>
+  <button id="prev" class="prev" onclick="prevSlide()">←</button>
+  <button id="next" class="next" onclick="nextSlide()">→</button>
+</div>
+
+<div class="dots" id="dots-container">
+  <span class="dot" onclick="goToSlide(0)"></span>
+  <span class="dot" onclick="goToSlide(1)"></span>
+  <span class="dot" onclick="goToSlide(2)"></span>
+  <span class="dot" onclick="goToSlide(3)"></span>
+  <span class="dot" onclick="goToSlide(4)"></span>
+  <span class="dot" onclick="goToSlide(5)"></span>
+  <span class="dot" onclick="goToSlide(6)"></span>
+  <span class="dot" onclick="goToSlide(7)"></span>
+  <span class="dot" onclick="goToSlide(8)"></span>
+  <!-- Add more dots as needed -->
+</div>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
+
+  showSlide(slideIndex);
+
+  function showSlide(index) {
+    if (index < 0) {
+      slideIndex = slides.length - 1;
+    } else if (index >= slides.length) {
+      slideIndex = 0;
+    } else {
+      slideIndex = index;
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+    }
+
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove('active');
+    }
+
+    slides[slideIndex].style.display = 'block';
+    dots[slideIndex].classList.add('active');
+
+    if (slideIndex === 0) {
+      prevButton.style.display = 'none';
+    } else {
+      prevButton.style.display = 'block';
+    }
+    if (slideIndex === slides.length - 1) {
+      nextButton.style.display = 'none';
+    } else {
+      nextButton.style.display = 'block';
+    }
+  }
+
+  function prevSlide() {
+    showSlide(slideIndex - 1);
+  }
+
+  function nextSlide() {
+    showSlide(slideIndex + 1);
+  }
+
+  function goToSlide(index) {
+    showSlide(index);
+  }
+</script>
+
+</body>
+</html>
