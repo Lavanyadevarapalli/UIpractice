@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    document.write("aaaaa");
+    function f3(){
+        document.write("123456");
+        f2();
+    }
+    function f1(){
+        f3();
+        console.log("wow what")
+    }
+    f3();
+    document.write("bbbbb")
+    function f2(){
+        document.write("ccccc")
+        var wish=f4();
+        document.write("sdfsdfdsf")
+        function f4(){
+            return "hello"
+        }
+        document.write("wish")
+    }
+</script>
+<body>
+    <h1>the javascript</h1>
+    <script>
+    function f3(){
+        document.write("123456");
+        f2();
+    }
+    
+        </script>
+    
+</body>
+</html>

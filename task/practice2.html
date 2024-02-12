@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+     document.write("fun1");
+    function fun1(){
+        function fun2(){
+            document.write("inside fun2"); document.write("before fun2");
+        }
+        document.write("after fun2 ends");
+    }
+    fun2();
+    document.write("before fun1");
+    fun1();
+    document.write("after fun1 ends");
+  </script>  
+</body>
+</html>
