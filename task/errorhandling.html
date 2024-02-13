@@ -5,40 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>error handling</title>
     <style>
-        .signup{
-            display: flex;
+        .button{
+            width: 100px;
+            height: 20px;
+            border: 1px solid black;
         }
     </style>
     <script>
         function validate() {
             try {
-                document.getElementById("errormessage").innerHTML="";
-                var error="";
-                var name = document.getElementById('username').value;
+                document.getElementById('errormessage').innerHTML=" ";
+                var error=" ";
+                var name = document.getElementById('name').value;
                var email = document.getElementById("email").value;
               var password = document.getElementById("password").value;
               var age = document.getElementById("age").value;
               var gender = document.getElementById("gender").value;
 
                 if (name.length <= 0) {
-                    error+= " User Name should not be empty ";
+                    error += " name should not be empty ";
                 }
                 if (email.length<=0) {
-            displayError("emailError", "Invalid email format");
+                    error += " email should not be empty ";
                 }
                 if (password.length <= 0) {
                     error+= " password should not be empty ";
                 }
                 if (age.length <= 0) {
-                    error+= " age should not be empty ";
+                    error += " age should not be empty ";
                 }
                 if (gender.length <= 0) {
-                    error+= " gender should not be empty ";
+                    error += " gender should not be empty ";
                 }
                 throw error;
             }
             catch(obj){
-                document.getElementById("errormessage").innerHTML=obj;
+                document.getElementById('errormessage').innerHTML=obj;
             }
         }
     </script>
@@ -70,9 +72,8 @@
         </select>
         <div id="genderError" class="error"></div>
     
-        <input type="submit" value="Submit">
-        <div id="signupMessage" class="success"></div>
+        <div class="button" onclick="validate()">submit</div>
+        <p id='errormessage'></p>
     </form>
-    <p id="errormessage"></p>
 </body>
 </html>
