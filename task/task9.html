@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function button1(){
+            let temp=document.getElementById("para1").innerHTML;
+    document.getElementById("para1").innerHTML=document.getElementById("para2").innerHTML;
+    document.getElementById("para2").innerHTML=temp;
+           
+        }
+        function button2(){
+            let temp=document.getElementById("para2").innerHTML;
+            document.getElementById("para2").innerHTML=document.getElementById("para1").innerHTML;
+            document.getElementById("para1").innerHTML=temp;
+    }
+    </script>
+</head>
+<body>
+    <p id="para1">hii hjbjjwguwh bhjwhkjw hjbwjh</p>
+    <button onclick="button1()">button1</button>
+    <p id="para2">hello hjbjjwguwh bhjwhkjw hjbwjh</p>
+    <button onclick="button2()">button2</button>
+</body>
+</html>

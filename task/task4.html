@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script>
+        function checkthevalue(){
+            let textboxvalue=document.getElementById("textbox").value;
+            if(textboxvalue=="10"){
+          document.getElementById('textvalue').innerHTML="true";
+          document.getElementById('textvalue').style.color="green";
+          document.getElementById('textvalue').style.fontWeight="bold";
+            }
+            else{
+                document.getElementById('textvalue').innerHTML="false";
+                document.getElementById('textvalue').style.color="red";
+                document.getElementById('textvalue').style.fontWeight="bold";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="textbox">
+    <button onclick="checkthevalue()">value</button>
+    <span id="textvalue" ></span>
+
+</body>
+</html>

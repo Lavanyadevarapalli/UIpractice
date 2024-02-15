@@ -1,0 +1,143 @@
+<style>
+    .button{
+        width: 50px;
+        height: 20px;
+        border: 3px solid black;
+
+    }
+    .button1{
+        width: 120px;
+        height: 30px;
+        border: 3px solid black;
+    }
+</style>
+
+<div class="address">
+    <h2>Shipping Address</h2>
+</div>
+<div>
+Name: <input type="text" name="name" id="name">
+<span class="nameerror" id="nameerror"></span>
+
+Father's Name: <input type="text" name="fatherName" id="fatherName">
+<span class="fathernameerror" id="fathernameerror"></span></div>
+<div>
+H No: <input type="text" name="hno" id="hno">
+<span class="hnoerror" id="hnoerror"></span>
+
+Landmark: <input type="text" name="landmark" id="landmark">
+<span class="landmarkerror" id="landmarkerror"></span></div>
+<div>
+City: <input type="text" name="city" id="city">
+<span class="cityerror" id="cityerror"></span>
+
+State: <input type="text" name="state" id="state">
+<span class="stateerror" id="stateerror"></span></div>
+<div class="button1" onclick="addfield()">addonemorefield</div>
+<div id="parent">
+</div>
+
+Pincode: <input type="text" name="pincode" id="pincode">
+<span class="pincodeerror" id="pincodeerror"></span><br>
+
+<input type="checkbox" id="sameAsShipping" onclick="copyShippingAddress()">
+<label for="sameAsShipping">Same as Shipping Address</label><br>
+
+<div class="address" id="residentialAddressBlock" style="display: none;">
+    <h2>Residential Address</h2>
+<div>
+    Name: <input type="text" name="residentialname" id="residentialname">
+    <span class="residentialnameerror" id="residentialnameerror"></span>
+
+    Father's Name: <input type="text" name="residentialfatherName" id="residentialfatherName">
+    <span class="residentialfathernameerror" id="residentialfathernameerror"></span>
+</div>
+<div>
+    H No: <input type="text" name="residentialhno" id="residentialhno">
+    <span class="residentialhnoerror" id="residentialhnoerror"></span>
+
+    Landmark: <input type="text" name="residentiallandmark" id="residentiallandmark">
+    <span class="residentiallandmarkerror" id="residentiallandmarkerror"></span></div>
+<div>
+    City: <input type="text" name="residentialcity" id="residentialcity">
+    <span class="residentialcityerror" id="residentialcityerror"></span>
+
+    State: <input type="text" name="residentialstate" id="residentialstate">
+    <span class="residentialstateerror" id="residentialstateerror"></span>
+    </div>
+
+    Pincode: <input type="text" name="residentialpincode" id="residentialpincode">
+    <span class="residentialpincodeerror" id="residentialpincodeerror"></span><br>
+</div>
+
+<div class="button" onclick="validate()">Submit</div>
+
+<script>
+    function validate(){
+        var nameerror= document.getElementById('nameerror').innerHTML="";
+       var fatherNameError = document.getElementById('fatherNameerror').innerHTML="";
+        var hnoError = document.getElementById('hnoerror').innerHTML="";
+        var landmarkError = document.getElementById('landmarkerror').innerHTML="";
+        var cityError = document.getElementById('cityerror').innerHTML="";
+        var stateError = document.getElementById('stateerror').innerHTML="";
+        var pincodeError = document.getElementById('pincodeerror').innerHTML="";
+
+       var name = document.getElementById('name').value;
+        var fatherName = document.getElementById('fatherName').value;
+        var hno = document.getElementById('hno').value;
+        var landmark = document.getElementById('landmark').value;
+        var city = document.getElementById('city').value;
+        var state = document.getElementById('state').value;
+        var pincode = document.getElementById('pincode').value;
+       if(name.length<=0){
+        document.getElementById('nameerror').innerHTML="name should not be empty";
+       }
+       if(fatherName.length<=0){
+        document.getElementById('fatherNameerror').innerHTML="fatherName should not be empty";
+       }
+       if(hno.length<=0){
+        document.getElementById('hnoerror').innerHTML="hno should not be empty";
+       }
+       if(landmark.length<=0){
+        document.getElementById('landmarkerror').innerHTML="landmark should not be empty";
+       }
+       if(city.length<=0){
+        document.getElementById('cityerror').innerHTML="city should not be empty";
+       }
+       if(state.length<=0){
+        document.getElementById('stateerror').innerHTML="state should not be empty";
+       }
+       if(pincode.length<=0){
+        document.getElementById('pincodeerror').innerHTML="pincode should not be empty";
+       }
+        
+    }
+    function addfield(){
+            var parent=document.getElementById('parent');
+            var child1=document.createElement('span');
+            var areadetails=document.createTextNode('AreaDetails:');
+            child1.appendChild(areadetails);
+            parent.appendChild(child1);
+            var child2=document.createElement('input');
+            child2.type = "text";
+            parent.appendChild(child2);
+        }
+    function copyShippingAddress() {
+        var residentialAddressBlock = document.getElementById('residentialAddressBlock');
+        if (document.getElementById('sameAsShipping').checked) {
+            residentialAddressBlock.style.display = 'none';
+        } else {
+            residentialAddressBlock.style.display = 'block';
+
+            document.getElementById('residentialname').value = document.getElementById('name').value;
+            document.getElementById('residentialFatherName').value = document.getElementById('fatherName').value;
+            document.getElementById('residentialhno').value = document.getElementById('hno').value;
+            document.getElementById('residentiallandmark').value = document.getElementById('landmark').value;
+            document.getElementById('residentialcity').value = document.getElementById('city').value;
+            document.getElementById('residentialstate').value = document.getElementById('state').value;
+            document.getElementById('residentialpincode').value = document.getElementById('pincode').value;
+            document.getElementById('residentialaddress').value = document.getElementById('address').value;
+        }
+    }
+</script>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function text(){
+        let textboxvalue= document.getElementById("textbox").value;
+      document.getElementById('clickerror').innerHTML=textboxvalue;
+    }
+</script>
+</head>
+<body>
+    <input type="text" id="textbox">
+    <button onclick="text()">hii</button>
+    <span id="clickerror"></span>
+</body>
+</html>
