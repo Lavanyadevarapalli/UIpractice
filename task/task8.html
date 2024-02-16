@@ -6,28 +6,22 @@
     <title>Document</title>
     <script>
         function button1(){
-    document.getElementById("image1").src="image1.jpg";
-    document.getElementById("image1").width=200;
-    document.getElementById("image1").height=200;
-    document.getElementById("image2").src="image.jpg";
-    document.getElementById("image2").width=200;
-    document.getElementById("image2").height=200;
+            let temp=document.getElementById("para1").innerHTML;
+    document.getElementById("para1").innerHTML=document.getElementById("para2").innerHTML;
+    document.getElementById("para2").innerHTML=temp;
+           
         }
         function button2(){
-    document.getElementById("image1").src="image.jpg";
-    document.getElementById("image1").width=300;
-    document.getElementById("image1").height=300;
-    document.getElementById("image2").src="image1.jpg";
-    document.getElementById("image2").width=300;
-    document.getElementById("image2").height=300;
-   
-        }
+            let temp=document.getElementById("para2").innerHTML;
+            document.getElementById("para2").innerHTML=document.getElementById("para1").innerHTML;
+            document.getElementById("para1").innerHTML=temp;
+    }
     </script>
 </head>
 <body>
-    <img id="image1" width="100" height="100" src="image.jpg">
-    <img id="image2"  width="100" height="100" src="image1.jpg">
+    <p id="para1">hii hjbjjwguwh bhjwhkjw hjbwjh</p>
     <button onclick="button1()">button1</button>
+    <p id="para2">hello hjbjjwguwh bhjwhkjw hjbwjh</p>
     <button onclick="button2()">button2</button>
 </body>
 </html>

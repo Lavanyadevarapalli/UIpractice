@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function plus(){
+            /*let parent=document.getElementById("star");
+            let span=document.createElement("span");
+            let star=document.createTextNode("*");
+                span.appendChild(star);
+                parent.appendChild(span);*/
+                let stars=document.getElementById("star").innerHTML;
+            document.getElementById("star").innerHTML = stars+" * ";
+
+            }
+            function minus(){
+                var stars= document.getElementById("star").innerHTML
+             document.getElementById("star").innerHTML =stars.slice(0, stars.length - 3);
+
+            }
+        </script>
+</head>
+<body>
+    <button id="plus" onclick="plus()">plus 1</button>
+    <button id="minus" onclick="minus()">minus 1</button>
+    <span id="star"></span>
+</body>
+</html>
